@@ -1,3 +1,5 @@
+package SongRelatedClasses;
+
 /**
  * The Rap class represents a specific type of song, Rap, which extends the Song class and includes
  * additional properties such as tempo in BPM.

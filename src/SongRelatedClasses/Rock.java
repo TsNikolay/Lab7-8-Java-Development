@@ -1,3 +1,5 @@
+package SongRelatedClasses;
+
 /**
  * The Rock class represents a specific type of song, Rock, which extends the Song class and includes
  * additional properties such as guitar solo duration.

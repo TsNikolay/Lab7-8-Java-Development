@@ -1,3 +1,5 @@
+package SongRelatedClasses;
+
 /**
  * The Jazz class represents a specific type of song, Jazz, which extends the Song class and includes
  * additional properties such as improvisation.

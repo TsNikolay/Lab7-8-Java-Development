@@ -1,3 +1,5 @@
+package SongRelatedClasses;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -27,8 +29,6 @@ public class Disk {
         int seconds = (int) totalDuration % 60;
 
         return minutes + "хв " + seconds + "сек";
-
-
     }
 
     /**
@@ -83,5 +83,14 @@ public class Disk {
         for (Song song : album) {
             song.printInfo();
         }
+    }
+
+    /**
+     * Gets the list of songs in the album.
+     *
+     * @return The list of songs in the album.
+     */
+    public ArrayList<Song> getAlbum() {
+        return album;
     }
 }

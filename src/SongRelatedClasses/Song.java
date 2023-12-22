@@ -1,3 +1,5 @@
+package SongRelatedClasses;
+
 /**
  * The Song class represents a generic music track with properties such as title, sub-genre, duration,
  * author, and release year.
@@ -61,15 +63,15 @@ public class Song {
      * Prints detailed information about the song.
      */
     public void printInfo() {
-        String blueColor = "\u001B[34m";
-        String orangeColor = "\u001B[33m";
-        String resetColor = "\u001B[0m";
-
         System.out.println("Title: " + getTitle());
-        System.out.println("SubGenre: " + orangeColor + getSubGenre() + resetColor);
-        System.out.println("Duration: " + blueColor + getDurationInSeconds() + " seconds" + resetColor);
+        System.out.println("SubGenre: " + getSubGenre() );
+        System.out.println("Duration: "  + getDurationInSeconds() + " seconds");
         System.out.println("Author: " + getAuthor());
         System.out.println("Release Year: " + getReleaseYear());
+    }
+
+    public void printTitle() {
+        System.out.println(getTitle());
     }
 
 
@@ -117,4 +119,5 @@ public class Song {
     public int getReleaseYear() {
         return releaseYear;
     }
+
 }
