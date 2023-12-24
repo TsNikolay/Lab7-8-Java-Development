@@ -18,12 +18,8 @@ public class TypedCollection implements List<Song> {
      * Constructs an empty SongCollection.
      */
     public TypedCollection() {
-        try {
-            songs = new Song[INITIAL_CAPACITY];
-            size = 0;
-        } catch (Exception e) {
-            throw new ExceptionHandler("Error creating an empty TypedCollection: " + e.getMessage());
-        }
+        songs = new Song[INITIAL_CAPACITY];
+        size = 0;
     }
 
     /**
@@ -33,12 +29,7 @@ public class TypedCollection implements List<Song> {
      */
     public TypedCollection(Collection<Song> TypedCollection) {
         this();
-        try {
-
-            addAll(TypedCollection);
-        } catch (Exception e) {
-            throw new ExceptionHandler("Error creating TypedCollection from a collection: " + e.getMessage());
-        }
+        addAll(TypedCollection);
     }
 
     /**
@@ -48,30 +39,17 @@ public class TypedCollection implements List<Song> {
      */
     public TypedCollection(Song song) {
         this();
-        try {
-
-            add(song);
-        } catch (Exception e) {
-            throw new ExceptionHandler("Error creating TypedCollection with a single song: " + e.getMessage());
-        }
+        add(song);
     }
 
     @Override
     public int size() {
-        try {
-            return size;
-        } catch (Exception e) {
-            throw new ExceptionHandler("Error getting size: " + e.getMessage());
-        }
+        return size;
     }
 
     @Override
     public boolean isEmpty() {
-        try {
-            return size == 0;
-        } catch (Exception e) {
-            throw new ExceptionHandler("Error checking if TypedCollection is empty: " + e.getMessage());
-        }
+        return size == 0;
     }
 
     @Override
@@ -98,11 +76,7 @@ public class TypedCollection implements List<Song> {
 
     @Override
     public Iterator<Song> iterator() {
-        try {
-            return Arrays.asList(Arrays.copyOf(songs, size)).iterator();
-        } catch (Exception e) {
-            throw new ExceptionHandler("Error creating an iterator: " + e.getMessage());
-        }
+        return Arrays.asList(Arrays.copyOf(songs, size)).iterator();
     }
 
     @Override
@@ -206,34 +180,26 @@ public class TypedCollection implements List<Song> {
 
 
     public void ensureCapacity() {
-        try {
-            if (size == songs.length) {
-                int newCapacity = (int) (size * GROWTH_FACTOR);
-                songs = Arrays.copyOf(songs, newCapacity);
-            }
-        } catch (Exception e) {
-            throw new ExceptionHandler("Error ensuring capacity: " + e.getMessage());
+        if (size == songs.length) {
+            int newCapacity = (int) (size * GROWTH_FACTOR);
+            songs = Arrays.copyOf(songs, newCapacity);
         }
     }
 
     @Override
     public String toString() {
-        try {
-            if (size == 0) {
-                return "[]";
-            }
-
-            StringBuilder sb = new StringBuilder("[");
-            for (int i = 0; i < size; i++) {
-                Song element =  songs[i];
-                sb.append(element.getTitle() + ", ");
-            }
-            sb.delete(sb.length() - 2, sb.length());
-            sb.append(']');
-            return sb.toString();
-        } catch (Exception e) {
-            throw new ExceptionHandler("Error creating string representation: " + e.getMessage());
+        if (size == 0) {
+            return "[]";
         }
+
+        StringBuilder sb = new StringBuilder("[");
+        for (int i = 0; i < size; i++) {
+            Song element =  songs[i];
+            sb.append(element.getTitle() + ", ");
+        }
+        sb.delete(sb.length() - 2, sb.length());
+        sb.append(']');
+        return sb.toString();
     }
 
 
@@ -367,20 +333,12 @@ public class TypedCollection implements List<Song> {
 
     @Override
     public ListIterator<Song> listIterator() {
-        try {
-            return Arrays.asList(Arrays.copyOf(songs, size)).listIterator();
-        } catch (Exception e) {
-            throw new ExceptionHandler("Error creating list iterator: " + e.getMessage());
-        }
+        return Arrays.asList(Arrays.copyOf(songs, size)).listIterator();
     }
 
     @Override
     public ListIterator<Song> listIterator(int index) {
-        try {
-            return Arrays.asList(Arrays.copyOf(songs, size)).listIterator(index);
-        } catch (Exception e) {
-            throw new ExceptionHandler("Error creating list iterator with index: " + index + ", " + e.getMessage());
-        }
+        return Arrays.asList(Arrays.copyOf(songs, size)).listIterator(index);
     }
 
     @Override
